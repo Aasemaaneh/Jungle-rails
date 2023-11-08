@@ -1,0 +1,27 @@
+<!-- app/views/orders/_item.html.erb -->
+
+<div class="line-item">
+  <div class="item-details">
+    <h4><%= item.product.name %></h4>
+    <%= image_tag item.product.image.thumb.url, alt: item.product.name, class: "img-fluid" %>
+    <p class="description"><%= item.product.description %></p>
+  </div>
+
+  <div class="item-metadata">
+    <div class="metadata">
+      <h4>Quantity</h4>
+      <%= item.quantity %>
+    </div>
+
+    <div class="metadata">
+      <h4>Price</h4>
+      <%= humanized_money_with_symbol(item.product.price) %>
+    </div>
+
+    <div class="metadata">
+      <h4>Email</h4>
+      <%= @order.email %>
+    </div>
+  </div>
+</div>
+
